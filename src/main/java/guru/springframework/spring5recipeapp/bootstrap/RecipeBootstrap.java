@@ -77,11 +77,14 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         Notes guacNotes = new Notes();
         guacNotes.setRecipeNotes("asf jskfjkasljf kjsafkljklj aklvjamnslfnakljf klj");
 
-        guacNotes.setRecipe(guacRecipe);
+        //guacNotes.setRecipe(guacRecipe);
+        //ova nam stavka vise nije potrebna zato sto smo u seteru za notes dodali tu stavku da odradi automatski
         guacRecipe.setNotes(guacNotes);
 
-        guacRecipe.getIngredients().add(new Ingredient("ripe avocados", new BigDecimal(2), eachUnitOfMeasure));
-        guacRecipe.getIngredients().add(new Ingredient("kosher salt", new BigDecimal(5), tableSpoonUom));
+        //guacRecipe.getIngredients().add(new Ingredient("ripe avocados", new BigDecimal(2), eachUnitOfMeasure));
+        guacRecipe.addIngredient(new Ingredient("ripe avocados", new BigDecimal(2), eachUnitOfMeasure));
+        //guacRecipe.getIngredients().add(new Ingredient("kosher salt", new BigDecimal(5), tableSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("kosher salt", new BigDecimal(5), tableSpoonUom));
 
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
